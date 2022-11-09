@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="eng">
+    <head> Calories Burn Prediction</head>
+    <body background="1.jpg">
+    
+<style>
+
+    html body {
+      background-color: rgb(206, 206, 228);
+
+      
+  }
+  
+</style>
+<!--Form Section-->
+<br /><br />
+<h2 style="text-align: center; margin: 0px; color: black">
+  <b>Find out the most suitable crop to grow in your farm</b>
+</h2>
+<br />
+
+<div
+  style="
+    width: 350px;
+    height: 50rem;
+    margin: 0px auto;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 10px;
+  "
+>
+ 
+        <form action="{{ url_for('predict')}}" method="post">
+        <h1> Predict calories Burned </h1>
+        <br>
+        <h2>Select the Gender</h2><select id="Gender" name="Gender" required="required">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <br>
+        <h3>Enter Your Age  </h3><input id="Age" name="Age" required="required" type="number"><br>
+        <h4>Enter Your Height (in cm) </h4><input id="Height" name="Height" required="required" type="number"><br>
+        <h5>Enter Your Weight (in Kgs)</h5><input id="Weight" name="Weight" required="required" type="number"><br>
+        <h6>Enter the Work Duration (in minutes)</h6><input name="Duration" id="Duration" required="required" type="number"><br>
+        <h7>Enter the Heart Rate</h7><input id="Heart" name="Heart" required="required" type="number"><br>
+        <h8>Enter the Body Temperature </h8><input id="Body" name="Body" required="required" type="number">
+
+        <div class="form-group">
+            <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen</b></label>
+            <input
+              type="number"
+              class="form-control"
+              id="Nitrogen"
+              name="nitrogen"
+              placeholder="Enter the value (example:50)"
+              style="font-weight: bold"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="Phosphorous" style="font-size: 17px"
+              ><b>Phosphorous</b></label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="Phosphorous"
+              name="phosphorous"
+              placeholder="Enter the value (example:50)"
+              style="font-weight: bold"
+              required
+            />
+          </div>
+      
+          <div class="form-group">
+            <label for="Pottasium" style="font-size: 17px"><b>Pottasium</b></label>
+            <input
+              type="number"
+              class="form-control"
+              id="Pottasium"
+              name="pottasium"
+              placeholder="Enter the value (example:50)"
+              style="font-weight: bold"
+              required
+            />
+          </div>
+        <br><br>
+        <button id="submit" type="submit">Submit</button>
+        </form>
+
+        <br>
+        <h9>{{prediction_text}}</h9>
+
+    </body>
+</html>
